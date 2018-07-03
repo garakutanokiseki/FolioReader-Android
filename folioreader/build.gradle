@@ -30,13 +30,14 @@ ext {
 
 android {
     useLibrary 'org.apache.http.legacy'
-    compileSdkVersion Integer.parseInt(project.ANDROID_COMPILE_SDK_VERSION)
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(project.ANDROID_MIN_SDK)
-        targetSdkVersion Integer.parseInt(project.ANDROID_TARGET_SDK_VERSION)
-        versionCode Integer.parseInt(project.VERSION_CODE)
-        versionName project.VERSION_NAME
+        versionCode 1
+        versionName "1.0"
+        minSdkVersion 14
+        targetSdkVersion 26
     }
 
     sourceSets {
@@ -85,18 +86,21 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':webViewMarker')
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    final ANDROID_LIB_VERSION = '27.+'
+
+    //noinspection GradleDependency
     implementation "com.android.support:appcompat-v7:$ANDROID_LIB_VERSION"
     implementation "com.android.support:recyclerview-v7:$ANDROID_LIB_VERSION"
     implementation "com.android.support:support-v4:$ANDROID_LIB_VERSION"
     implementation "com.android.support:design:$ANDROID_LIB_VERSION"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
     implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
-
     //Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.2.+"
     // r2-streamer
+    final R2_STREAMER_VERSION = '0.1.7'
+
     api "org.readium:r2-fetcher:$R2_STREAMER_VERSION"
     api "org.readium:r2-parser:$R2_STREAMER_VERSION"
     api "org.readium:r2-server:$R2_STREAMER_VERSION"

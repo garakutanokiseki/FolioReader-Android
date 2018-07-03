@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.widget.RelativeLayout
 import com.folioreader.Config
 import com.folioreader.R
+import com.folioreader.R.id.*
 import com.folioreader.model.event.MediaOverlayHighlightStyleEvent
 import com.folioreader.model.event.MediaOverlaySpeedEvent
 import com.folioreader.util.AppUtil

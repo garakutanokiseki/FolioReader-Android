@@ -6,7 +6,7 @@ before_install:
 
 android:
   components:
-    - android-28
+    - android-27
     - extra-android-m2repository
 
   licenses:
